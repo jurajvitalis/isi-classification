@@ -28,7 +28,7 @@ Given labeled data, find and train the best-performing classification model.
 
 `preprocessing.py` 
 
-- Creates column transformer
+- Creates a column transformer that imputes and scales the numeric columns and performs OHE on the categorical columns
 
 `find_clf.py`
 
@@ -36,7 +36,7 @@ Given labeled data, find and train the best-performing classification model.
 
 `find_params.py`
 
-- Finds the best-performing parameters for the classifier found in `find_clf.py`
+- Finds the best-performing parameters for the classifier found in `find_clf.py` using GridSearchCV
 
 `predict_eval.py`
 
