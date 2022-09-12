@@ -4,7 +4,7 @@
 
 Goal: Classify samples in `data/X_eval.npy`.
 
-Given labeled data, find and train the best classification model.
+Given labeled data, find and train the best-performing classification model.
 
 ## Data
 
@@ -32,11 +32,11 @@ Given labeled data, find and train the best classification model.
 
 `find_clf.py`
 
-- Finds the best performing classifier using RandomizedSearchCV
+- Finds the best-performing classifier using RandomizedSearchCV
 
 `find_params.py`
 
-- Finds the optimal parameters for the classifier found in `find_clf.py`
+- Finds the best-performing parameters for the classifier found in `find_clf.py`
 
 `predict_eval.py`
 
