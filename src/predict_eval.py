@@ -1,8 +1,9 @@
 import joblib
 import numpy as np
 
+
 # Load data
-X_eval = np.load('data/X_eval400.npy', allow_pickle=True)
+X_eval = np.load('../data/X_eval400.npy', allow_pickle=True)
 
 # Load pipeline object from gridsearch
 gs = joblib.load('gs_result.pkl')

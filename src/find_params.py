@@ -9,14 +9,13 @@ from preprocessing import col_transformer
 
 
 # Import data
-X_eval = np.load('data/X_eval400.npy', allow_pickle=True)
-X_public = np.load('data/X_public400.npy', allow_pickle=True)
-y_public = np.load('data/y_public400.npy', allow_pickle=True)
+X_eval = np.load('../data/X_eval400.npy', allow_pickle=True)
+X_public = np.load('../data/X_public400.npy', allow_pickle=True)
+y_public = np.load('../data/y_public400.npy', allow_pickle=True)
 
 # Split
 X_train, X_test, y_train, y_test = train_test_split(X_public, y_public,
                                                     test_size=0.2, random_state=1, stratify=y_public)
-
 
 # Create the main pipeline
 pipe = Pipeline([

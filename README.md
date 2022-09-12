@@ -1,28 +1,30 @@
 # Binary classification task
 
-Given labeled data, find and train the best classification model.
+![Screenshot](/docs/readme-img.png)
 
-Goal: Classify samples in *X_eval*.
+Goal: Classify samples in `data/X_eval.npy`.
+
+Given labeled data, find and train the best classification model.
 
 ## Data
 
-*X_public*
+`X_public.npy`
 
 - 600x200
 - first 180 columns contain numeric values
 - last 20 columns contain strings
 
-*y_public*
+`y_public.npy`
 
 - 1x600
 - labels for X_public
 
-*X_eval*
+`X_eval.npy`
 
 - 200x200
 - column structure same as *X_public*
 
-## Files
+## Processes
 
 `preprocessing.py` 
 
@@ -30,7 +32,7 @@ Goal: Classify samples in *X_eval*.
 
 `find_clf.py`
 
-- Finds the optimal classifier using RandomizedSearchCV
+- Finds the best performing classifier using RandomizedSearchCV
 
 `find_params.py`
 
@@ -40,6 +42,16 @@ Goal: Classify samples in *X_eval*.
 
 - Classifies the assigned samples
 
-## TODO
+## Dependencies
 
-- [x] Create pipelines for everything
+- Python 3.9.7
+
+- numpy 1.21.2
+
+- pandas 1.3.4
+
+- scikit-learn 1.0.1
+
+- scipy 1.7.1
+
+- All dependencies in `environment.yml`

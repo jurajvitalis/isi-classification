@@ -1,5 +1,4 @@
 import time
-
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
@@ -12,10 +11,11 @@ from sklearn.tree import DecisionTreeClassifier
 
 from preprocessing import col_transformer
 
+
 # Import data
-X_eval = np.load('data/X_eval400.npy', allow_pickle=True)
-X_public = np.load('data/X_public400.npy', allow_pickle=True)
-y_public = np.load('data/y_public400.npy', allow_pickle=True)
+X_eval = np.load('../data/X_eval400.npy', allow_pickle=True)
+X_public = np.load('../data/X_public400.npy', allow_pickle=True)
+y_public = np.load('../data/y_public400.npy', allow_pickle=True)
 
 # Split
 X_train, X_test, y_train, y_test = train_test_split(X_public, y_public,
@@ -91,8 +91,8 @@ scores = []
 start = time.time()
 
 for model_name, mp in model_params.items():
-    gs = GridSearchCV(mp['model'], mp['params'], cv=3, n_jobs=-1, verbose=1)
-    # gs = RandomizedSearchCV(mp['model'], mp['params'], cv=3, n_jobs=-1, n_iter=100, verbose=1)
+    # gs = GridSearchCV(mp['model'], mp['params'], cv=3, n_jobs=-1, verbose=1)
+    gs = RandomizedSearchCV(mp['model'], mp['params'], cv=3, n_jobs=-1, n_iter=100, verbose=1)
     gs.fit(X_train, y_train)
     scores.append({
         'model': model_name,
